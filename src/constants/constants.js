@@ -17,6 +17,29 @@ export const OUTPUT_MESSAGE = {
   printNotExist: "없음"
 };
 
+export const MENU = {
+  APPETIZER: {
+    MUSHROOM_SOUP: { name: "양송이수프", price: 6000 },
+    TAPAS: { name: "타파스", price: 5500 },
+    CAESAR_SALAD: { name: "시저샐러드", price: 8000 }
+  },
+  MAIN: {
+      T_BONE_STEAK: { name: "티본스테이크", price: 55000 },
+      BBQ_RIBS: { name: "바비큐립", price: 54000 },
+      SEAFOOD_PASTA: { name: "해산물파스타", price: 35000 },
+      CHRISTMAS_PASTA: { name: "크리스마스파스타", price: 25000 }
+  },
+  DESSERT: {
+      CHOCO_CAKE: { name: "초코케이크", price: 15000 },
+      ICE_CREAM: { name: "아이스크림", price: 5000 }
+  },
+  BEVERAGE: {
+      ZERO_COLA: { name: "제로콜라", price: 3000 },
+      RED_WINE: { name: "레드와인", price: 60000 },
+      CHAMPAGNE: { name: "샴페인", price: 25000 }
+  }
+}
+
 export const BENEFITS = {
   CHRISTMAS_DISCOUNT: "크리스마스 디데이 할인",
   WEEKDAY_DISCOUNT: "평일 할인",
@@ -32,5 +55,6 @@ export const BADGE = {
 
 Object.freeze(INPUT_MESSAGE);
 Object.freeze(OUTPUT_MESSAGE);
+Object.freeze(MENU);
 Object.freeze(BENEFITS);
 Object.freeze(BADGE);
