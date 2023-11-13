@@ -1,3 +1,5 @@
+import ChristmasController from "./controllers/ChristmasController.js";
+
 class App {
   #christmasController
 
@@ -8,5 +10,8 @@ class App {
     await this.#christmasController.run();
   }
 }
+
+const app = new App();
+app.run();
 
 export default App;

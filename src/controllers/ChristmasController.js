@@ -1,3 +1,5 @@
+import { MissionUtils } from "@woowacourse/mission-utils";
+
 class ChristmasController {
   constructor() {
 
@@ -7,3 +9,5 @@ class ChristmasController {
 
   }
 }
+
+export default ChristmasController;
