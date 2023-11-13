@@ -1,5 +1,12 @@
 class App {
-  async run() {}
+  #christmasController
+
+  constructor() {
+    this.#christmasController = new ChristmasController();
+  }
+  async run() {
+    await this.#christmasController.run();
+  }
 }
 
 export default App;
