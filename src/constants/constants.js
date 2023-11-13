@@ -29,3 +29,8 @@ export const BADGE = {
   TREE: "트리",
   SANTA: "산타"
 }
+
+Object.freeze(INPUT_MESSAGE);
+Object.freeze(OUTPUT_MESSAGE);
+Object.freeze(BENEFITS);
+Object.freeze(BADGE);
