@@ -5,7 +5,12 @@ class Vaildator {
     if (!Number.isInteger(num)) {
       throw new Error("[ERROR]");
     }
-    
+  }
+
+  static isNumberInRange(num) {
+    if(num < 1 || num > 31){
+      throw new Error("[ERROR] 1~31");
+    }
   }
 }
 
