@@ -1,7 +1,5 @@
-import { Console } from "@woowacourse/mission-utils";
 import { ERROR_MESSAGE } from "../constants/error.js";
 import { MENU } from "../constants/constants.js";
-import Menu from "../models/Menu.js";
 import getCategory from "../utils/GetCategory.js";
 
 class Vaildator {

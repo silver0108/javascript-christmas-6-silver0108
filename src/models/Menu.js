@@ -1,5 +1,5 @@
 import MenuItem from "./MenuItem.js";
-import { Console } from "@woowacourse/mission-utils";
+
 class Menu {
   #menuList;
 

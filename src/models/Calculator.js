@@ -1,4 +1,3 @@
-import { Console } from "@woowacourse/mission-utils";
 import isWeekend from "../utils/IsWeekend.js";
 import { STAR_DAY } from "../constants/constants.js";
 

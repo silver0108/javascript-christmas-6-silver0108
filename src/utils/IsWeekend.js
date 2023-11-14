@@ -1,5 +1,4 @@
-import { Console } from "@woowacourse/mission-utils";
-
+// 평일, 주말 판별
 const isWeekend = (date) => {
   const currentYear = new Date().getFullYear();
   const inputDate = new Date(currentYear, 11, date); // 12월은 11을 나타냄
