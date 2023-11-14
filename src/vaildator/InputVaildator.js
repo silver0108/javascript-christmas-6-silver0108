@@ -54,6 +54,13 @@ class Vaildator {
       throw new Error(ERROR_MESSAGE.onlyBeverage);
     }
   }
+
+  static isQuantityExceeded(menus) {
+    const totalQuantity = menus.reduce((total, menu) => total + Number(menu.quantity), 0);
+    if (totalQuantity > 20) {
+      throw new Error(ERROR_MESSAGE.exceedQuantity);  
+    }
+  }
 }
 
 export default Vaildator;

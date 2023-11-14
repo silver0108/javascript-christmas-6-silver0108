@@ -9,6 +9,7 @@ const OrderVaildator = (orderMenus) => {
   });
 
   Vaildator.isBerverage(orderMenus); // 주문 메뉴가 모두 음료인지
+  Vaildator.isQuantityExceeded(orderMenus);
 }
 
 export default OrderVaildator;
