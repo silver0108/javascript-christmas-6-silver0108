@@ -9,7 +9,8 @@ class ChristmasController {
 
   async run() {
     const date = await InputView.readDate();
-    Console.print(date);
+    const menus = await InputView.readOrder();
+    Console.print(menus);
   }
 }
 
