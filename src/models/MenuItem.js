@@ -1,6 +1,4 @@
-import Vaildator from "../vaildator/vaildator.js";
-
-class Menu {
+class MenuItem {
   #name;
   #category;
   #price;
@@ -12,4 +10,4 @@ class Menu {
   }
 }
 
-export default Menu;
+export default MenuItem;
