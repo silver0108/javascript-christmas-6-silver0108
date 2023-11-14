@@ -8,6 +8,12 @@ class MenuItem {
     this.#category = category;
     this.#price = price;
   }
+  getName() {
+    return this.#name;
+  }
+  getPrice() {
+    return this.#price;
+  }
 }
 
 export default MenuItem;
