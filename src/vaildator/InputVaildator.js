@@ -1,6 +1,8 @@
 import { Console } from "@woowacourse/mission-utils";
 import { ERROR_MESSAGE } from "../constants/error.js";
 import { MENU } from "../constants/constants.js";
+import Menu from "../models/Menu.js";
+import getCategory from "../utils/GetCategory.js";
 
 class Vaildator {
   static isNumber(num) {
@@ -36,7 +38,7 @@ class Vaildator {
         }
       } 
     }
-    throw new Error("ERROR_MESSAGE.notVaildOrder");
+    throw new Error(ERROR_MESSAGE.notVaildOrder);
   }
 
   static isDuplicate(menus) {
@@ -48,7 +50,9 @@ class Vaildator {
   }
 
   static isBerverage(menus) {
-    
+    if (menus.every(menu => getCategory(menu.menuName) === "BEVERAGE")) {
+      throw new Error(ERROR_MESSAGE.onlyBeverage);
+    }
   }
 }
 

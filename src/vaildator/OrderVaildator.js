@@ -8,9 +8,7 @@ const OrderVaildator = (orderMenus) => {
       Vaildator.isNumber(Number(item.quantity)) || Vaildator.isGreaterThanOne(item.quantity); // 메뉴 개수가 1 이상의 숫자인지
   });
 
-  Vaildator.isBerverage(orderMenus);
-
-  
+  Vaildator.isBerverage(orderMenus); // 주문 메뉴가 모두 음료인지
 }
 
 export default OrderVaildator;

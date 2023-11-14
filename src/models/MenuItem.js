@@ -8,8 +8,12 @@ class MenuItem {
     this.#category = category;
     this.#price = price;
   }
+  
   getName() {
     return this.#name;
+  }
+  getCategory() {
+    return this.#category;
   }
   getPrice() {
     return this.#price;

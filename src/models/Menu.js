@@ -13,8 +13,8 @@ class Menu {
     }
   }
 
-  getMenuData(){
-    return this.#menuList;
+  getMenuItem(menuName){
+    return this.#menuList.find(menuItem => menuItem.getName() === menuName);
   }
 }
 
