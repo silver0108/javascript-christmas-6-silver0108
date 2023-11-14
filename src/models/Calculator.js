@@ -17,9 +17,6 @@ class Calculator {
   constructor(orders, date) {
     this.#orders = orders;
     this.#date = date;
-    this.calculateTotalPrice();
-    this.calculateGiftMenu();
-    this.calculateBenefit();
   }
 
   calculateTotalPrice() {
@@ -37,11 +34,10 @@ class Calculator {
 
   calculateBenefit() {
     if(this.#totalPrice >= 10000){
-      this.calculateChristmasDday();
-      this.calculateWeekday();
-      this.calculateWeekend();
-      this.calculateSpecial();
+      return [this.calculateChristmasDday(), this.calculateWeekday(), this.calculateWeekend(),
+        this.calculateSpecial(), this.calculateGiftEvent()]
     }
+    return false;
   }
 
   calculateChristmasDday() {
@@ -105,17 +101,17 @@ class Calculator {
   }
 
   calculatePaymentPrice() {
-    this.#paymentPrice = this.#totalPrice - this.#discountPrice;
+    this.#paymentPrice = this.#totalPrice + this.#discountPrice - this.#giftDiscount;
     return this.#paymentPrice;
   }
 
   calculateBadge() {
-    if(this.#discountPrice >= 5000) {
-      return "STAR";
-    }else if(this.#discountPrice >= 10000) {
+    if(-this.#discountPrice >= 20000) {
+      return "SANTA";
+    }else if(-this.#discountPrice >= 10000) {
       return "TREE";
-    }else if(this.#discountPrice >= 20000) {
-      return "SANTA"
+    }else if(-this.#discountPrice >= 5000) {
+      return "STAR"
     }
     return false;
   }

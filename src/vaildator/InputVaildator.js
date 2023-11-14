@@ -7,7 +7,7 @@ import getCategory from "../utils/GetCategory.js";
 class Vaildator {
   static isNumber(num) {
     if (!Number.isInteger(num)) {
-      throw new Error(ERROR_MESSAGE.notVaildNumber);
+      throw new Error(ERROR_MESSAGE.notValidDate);
     }
   }
 
