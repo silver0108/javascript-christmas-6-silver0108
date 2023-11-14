@@ -10,6 +10,7 @@ class Calculator {
   #weekdayDiscount=0;
   #weekendDiscount = 0;
   #specialDiscount = 0;
+  #giftDiscount = 0;
 
   constructor(orders, date) {
     this.#orders = orders;
@@ -83,6 +84,14 @@ class Calculator {
     if(STAR_DAY.includes(this.#date)) {
       this.#specialDiscount = -1000;
       return this.#specialDiscount;
+    }
+    return false;
+  }
+
+  calculateGiftEvent() {
+    if(this.calculateGiftMenu()) {
+      this.#giftDiscount = -25000;
+      return this.#giftDiscount;
     }
     return false;
   }
