@@ -22,9 +22,13 @@ const InputView = {
     async readOrder() {
         try {
             const orderDetails = await Console.readLineAsync(INPUT_MESSAGE.inputOrder);
+            // 주문 형식에 맞는지
             orderDetails.trim().split(',').forEach(Vaildator.isVaildOrderForm);
+            // 주문 메뉴 분리
+            const menus = parseOrderDetails(orderDetails); 
+            // 메뉴판에 있는 메뉴인지
+            menus.forEach((item) => Vaildator.isMenuInMenuList(item.menuName));
 
-            const menus = parseOrderDetails(orderDetails);
             return menus;
         }
         catch(error){
