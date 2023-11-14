@@ -31,11 +31,12 @@ class Vaildator {
   static isMenuInMenuList(name) {
     for (const category in MENU) {
       for (const menuItem in MENU[category]) {
-        if (MENU[category][menuItem].name !== name) {
-          throw new Error(ERROR_MESSAGE.notVaildOrder);
+        if (MENU[category][menuItem].name === name) {
+          return true;
         }
       } 
     }
+    throw new Error("ERROR_MESSAGE.notVaildOrder");
   }
 
   static isDuplicate(menus) {

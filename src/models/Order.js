@@ -1,6 +1,3 @@
-import Vaildator from "../vaildator/vaildator.js";
-import { Console } from "@woowacourse/mission-utils";
-
 class Order {
   #orderMenus;
 
