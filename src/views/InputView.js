@@ -22,6 +22,8 @@ const InputView = {
     async readOrder() {
         try {
             const orderDetails = await Console.readLineAsync(INPUT_MESSAGE.inputOrder);
+            orderDetails.trim().split(',').forEach(Vaildator.isVaildOrderForm);
+
             const menus = parseOrderDetails(orderDetails);
             return menus;
         }
