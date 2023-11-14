@@ -29,6 +29,7 @@ const InputView = {
                 Vaildator.isMenuInMenuList(item.menuName); // 메뉴판에 있는 메뉴인지
                 Vaildator.isNumber(Number(item.quantity)) || Vaildator.isGreaterThanOne(item.quantity); // 메뉴 개수가 1 이상의 숫자인지
             });
+            Vaildator.isDuplicate(menus); // 중복되는 메뉴가 있는 지
 
             return menus;
         }

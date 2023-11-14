@@ -37,6 +37,14 @@ class Vaildator {
       } 
     }
   }
+
+  static isDuplicate(menus) {
+    const uniqueMenuNames = new Set(menus.map(item => item.menuName));
+
+    if (uniqueMenuNames.size !== menus.length) {
+      throw new Error(ERROR_MESSAGE.isDuplicateMenu);
+    }
+  }
 }
 
 export default Vaildator;

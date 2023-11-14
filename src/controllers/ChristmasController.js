@@ -12,6 +12,10 @@ class ChristmasController {
     const menus = await InputView.readOrder();
     Console.print(menus);
   }
+
+  #vaildate(data) {
+    
+  }
 }
 
 export default ChristmasController;
