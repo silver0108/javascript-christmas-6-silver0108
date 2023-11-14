@@ -11,6 +11,8 @@ class Calculator {
   #weekendDiscount = 0;
   #specialDiscount = 0;
   #giftDiscount = 0;
+  #discountPrice = 0;
+  #paymentPrice = 0;
 
   constructor(orders, date) {
     this.#orders = orders;
@@ -97,8 +99,14 @@ class Calculator {
   }
 
   calculateDiscountPrice() {
-    return this.#christmasDiscount + this.#weekdayDiscount + 
+    this.#discountPrice = this.#christmasDiscount + this.#weekdayDiscount + 
       this.#weekendDiscount + this.#specialDiscount + this.#giftDiscount;
+    return this.#discountPrice;
+  }
+
+  calculatePaymentPrice() {
+    this.#paymentPrice = this.#totalPrice - this.#discountPrice;
+    return this.#paymentPrice;
   }
 
 }
