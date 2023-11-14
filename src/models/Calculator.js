@@ -96,6 +96,11 @@ class Calculator {
     return false;
   }
 
+  calculateDiscountPrice() {
+    return this.#christmasDiscount + this.#weekdayDiscount + 
+      this.#weekendDiscount + this.#specialDiscount + this.#giftDiscount;
+  }
+
 }
 
 export default Calculator;
