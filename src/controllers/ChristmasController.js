@@ -1,17 +1,12 @@
 import { Console } from "@woowacourse/mission-utils";
 import InputView from "../views/InputView.js";
-import Menu from "../models/Menu.js";
+import Order from "../models/Order.js";
 
 class ChristmasController {
 
-  constructor() {
-
-  }
-
   async run() {
     const date = await InputView.readDate();
-    const inputMenus = await InputView.readOrder();
-    const menus = inputMenus.map(item => new Menu(item.menuName, item.quantity));
+    const orderMenus = new Order(await InputView.readOrder());
   }
 }
 
