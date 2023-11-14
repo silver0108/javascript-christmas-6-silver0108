@@ -3,6 +3,7 @@ import InputView from "../views/InputView.js";
 import Order from "../models/Order.js";
 import Menu from "../models/Menu.js";
 import { MENU } from "../constants/constants.js";
+import OutputView from "../views/OutputView.js";
 
 class ChristmasController {
 
@@ -14,10 +15,9 @@ class ChristmasController {
     const orders = orderMenus.map(item => {
       return new Order(menus.getMenuItem(item.menuName), item.quantity)
     });
-    // for(const order of orders){
-    //   Console.print(order.getOrderDetails().getName());
-    //   Console.print(order.getMenuQuantity());
-    // }
+
+    OutputView.printMenu(orders);
+    
   }
 }
 

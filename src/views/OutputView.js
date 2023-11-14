@@ -1,9 +1,13 @@
+import { Console } from "@woowacourse/mission-utils";
+import { OUTPUT_MESSAGE } from "../constants/constants.js";
+
 const OutputView = {
-    printMenu() {
-        Console.print("<주문 메뉴>");
-        // ...
+    printMenu(orderMenus) {
+        Console.print(OUTPUT_MESSAGE.printOrderMenuMessage);
+        orderMenus.forEach(menu => {
+            Console.print(OUTPUT_MESSAGE.printOrderMenu(
+                menu.getOrderMenu().getName(), menu.getMenuQuantity()))});
     }
-    // ...
 }
 
 export default OutputView;
