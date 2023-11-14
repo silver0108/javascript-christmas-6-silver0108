@@ -1,7 +1,8 @@
 import { Console } from "@woowacourse/mission-utils";
-import Vaildator from "../vaildator/vaildator.js";
+import Vaildator from "../vaildator/InputVaildator.js";
 import { INPUT_MESSAGE } from "../constants/constants.js";
 import parseOrderDetails from "../utils/ParseOrderDetails.js";
+import OrderVaildator from "../vaildator/OrderVaildator.js";
 
 const InputView = {
     async readDate() {
@@ -21,15 +22,12 @@ const InputView = {
     async readOrder() {
         try {
             const orderDetails = await Console.readLineAsync(INPUT_MESSAGE.inputOrder);
-            orderDetails.trim().split(',').forEach(Vaildator.isVaildOrderForm); // 주문 메뉴 형식에 맞는지
+            orderDetails.trim().split(',').forEach(Vaildator.isVaildOrderForm); // 메뉴 형식에 맞는지
             
-            const menus = parseOrderDetails(orderDetails); // 주문 메뉴 분리
-            Vaildator.isDuplicate(menus); // 중복되는 메뉴가 있는 지
-            menus.forEach((item) => {
-                Vaildator.isMenuInMenuList(item.menuName); // 메뉴판에 있는 메뉴인지
-                Vaildator.isNumber(Number(item.quantity)) || Vaildator.isGreaterThanOne(item.quantity); // 메뉴 개수가 1 이상의 숫자인지
-            });
-            return menus;
+            const orderMenus = parseOrderDetails(orderDetails); // 주문 메뉴 분리
+            OrderVaildator(orderMenus);
+
+            return orderMenus;
         }
         catch(error){
             Console.print(error.message);

@@ -10,7 +10,14 @@ class ChristmasController {
     const menus = new Menu(MENU);
 
     const date = await InputView.readDate();
-    const orderMenus = new Order(await InputView.readOrder());
+    const orderMenus = await InputView.readOrder();
+    const orders = orderMenus.map(item => {
+      return new Order(menus.getMenuData().find(menuItem => menuItem.getName() === item.menuName), item.quantity)
+    });
+    // for(const order of orders){
+    //   Console.print(order.getOrderDetails().getName());
+    //   Console.print(order.getMenuQuantity());
+    // }
   }
 }
 

@@ -46,6 +46,10 @@ class Vaildator {
       throw new Error(ERROR_MESSAGE.isDuplicateMenu);
     }
   }
+
+  static isBerverage(menus) {
+    
+  }
 }
 
 export default Vaildator;

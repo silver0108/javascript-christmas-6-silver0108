@@ -1,12 +1,18 @@
 class Order {
-  #orderMenus;
+  #orderMenu;
+  #quantity;
 
-  constructor(orderMenus) {
-    this.#orderMenus = orderMenus;
+  constructor(orderMenu, quantity) {
+    this.#orderMenu = orderMenu;
+    this.#quantity = quantity;
   }
 
-  getOrderDetails() {
-    return this.#orderMenus;
+  getOrderMenu() {
+    return this.#orderMenu;
+  }
+
+  getMenuQuantity (){
+    return this.#quantity;
   }
 }
 
