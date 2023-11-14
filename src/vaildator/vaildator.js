@@ -5,13 +5,19 @@ import { MENU } from "../constants/constants.js";
 class Vaildator {
   static isNumber(num) {
     if (!Number.isInteger(num)) {
-      throw new Error(ERROR_MESSAGE.notValidDate);
+      throw new Error(ERROR_MESSAGE.notVaildNumber);
     }
   }
 
   static isNumberInRange(num) {
     if(num < 1 || num > 31){
       throw new Error(ERROR_MESSAGE.notValidDate);
+    }
+  }
+
+  static isGreaterThanOne(num){
+    if(num < 1){
+      throw new Error(ERROR_MESSAGE.notVaildOrder);
     }
   }
 
