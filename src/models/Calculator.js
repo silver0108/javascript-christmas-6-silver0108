@@ -109,6 +109,17 @@ class Calculator {
     return this.#paymentPrice;
   }
 
+  calculateBadge() {
+    if(this.#discountPrice >= 5000) {
+      return "STAR";
+    }else if(this.#discountPrice >= 10000) {
+      return "TREE";
+    }else if(this.#discountPrice >= 20000) {
+      return "SANTA"
+    }
+    return false;
+  }
+
 }
 
 export default Calculator;
