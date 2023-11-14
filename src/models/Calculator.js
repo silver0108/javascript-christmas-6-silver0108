@@ -15,6 +15,13 @@ class Calculator {
     
     return totalPrice;
   }
+
+  calculateGiftMenu() {
+    if(this.#totalPrice >= 120000) {
+      return true;
+    }
+    return false;
+  }
 }
 
 export default Calculator;
