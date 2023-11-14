@@ -33,6 +33,7 @@ class Calculator {
     if(this.#totalPrice >= 10000){
       this.calculateChristmasDday();
       this.calculateWeekday();
+      this.calculateWeekend();
     }
   }
 
@@ -55,6 +56,21 @@ class Calculator {
     }
     return false;
   }
+
+  calculateWeekend() {
+    if(isWeekend(this.#date)) {
+      for(const order of this.#orders) {
+        const menu = order.getOrderMenu();
+        if(menu.getCategory() === "MAIN") {
+          this.#weekdayDiscount += 2023 * order.getMenuQuantity(); 
+          return -this.#weekdayDiscount;
+        }
+      }
+    }
+    return false;
+  }
+
+
 }
 
 export default Calculator;
