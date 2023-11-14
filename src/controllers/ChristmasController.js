@@ -16,7 +16,7 @@ class ChristmasController {
     const orders = orderMenus.map(item => {
       return new Order(menus.getMenuItem(item.menuName), item.quantity)
     });
-    const calculator = new Calculator(orders);
+    const calculator = new Calculator(orders, date);
 
     OutputView.printMenu(orders);
     
