@@ -1,17 +1,15 @@
+import Vaildator from "../vaildator/vaildator.js";
+
 class Menu {
   #name;
-  #quantity;
+  #category;
+  #price;
 
-  constructor(name, quantity) {
+  constructor(name, category, price) {
     this.#name = name;
-    this.#quantity = quantity;
-  }
-
-  getName() {
-    return this.#name;
-  }
-  
-  getQuantity() {
-    return this.#quantity;
+    this.#category = category;
+    this.#price = price;
   }
 }
+
+export default Menu;
