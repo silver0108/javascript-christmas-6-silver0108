@@ -47,6 +47,8 @@ export const BENEFITS = {
   GIFT_EVENT: "증정 이벤트"
 }
 
+export const STAR_DAY = [3, 10, 17, 24, 25, 31];
+
 export const BADGE = {
   STAR: "별",
   TREE: "트리",

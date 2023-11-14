@@ -1,12 +1,15 @@
 import { Console } from "@woowacourse/mission-utils";
 import isWeekend from "../utils/IsWeekend.js";
+import { STAR_DAY } from "../constants/constants.js";
 
 class Calculator {
   #orders;
   #date;
-  #toalQuantity;
   #totalPrice=0;
+  #christmasDiscount=0;
   #weekdayDiscount=0;
+  #weekendDiscount = 0;
+  #specialDiscount = 0;
 
   constructor(orders, date) {
     this.#orders = orders;
@@ -34,42 +37,55 @@ class Calculator {
       this.calculateChristmasDday();
       this.calculateWeekday();
       this.calculateWeekend();
+      this.calculateSpecial();
     }
   }
 
   calculateChristmasDday() {
     if(this.#date >= 1 && this.#date <=25) {
-      return -(1000 + (this.#date - 1) * 100); 
+      this.#christmasDiscount = -(1000 + (this.#date - 1) * 100); 
+      return this.#christmasDiscount;
     }
     return false;
   }
 
   calculateWeekday() {
+    let discount = 0;
     if(!isWeekend(this.#date)) {
       for(const order of this.#orders) {
         const menu = order.getOrderMenu();
         if(menu.getCategory() === "DESSERT") {
-          this.#weekdayDiscount += 2023 * order.getMenuQuantity(); 
-          return -this.#weekdayDiscount;
+          discount += 2023 * order.getMenuQuantity(); 
         }
       }
+      this.#weekdayDiscount = -discount;
+      return this.#weekdayDiscount;
     }
     return false;
   }
 
   calculateWeekend() {
+    let discount = 0;
     if(isWeekend(this.#date)) {
       for(const order of this.#orders) {
         const menu = order.getOrderMenu();
         if(menu.getCategory() === "MAIN") {
-          this.#weekdayDiscount += 2023 * order.getMenuQuantity(); 
-          return -this.#weekdayDiscount;
+          discount += 2023 * order.getMenuQuantity(); 
         }
       }
+      this.#weekendDiscount = -discount;
+      return this.#weekendDiscount;
     }
     return false;
   }
 
+  calculateSpecial() {
+    if(STAR_DAY.includes(this.#date)) {
+      this.#specialDiscount = -1000;
+      return this.#specialDiscount;
+    }
+    return false;
+  }
 
 }
 
