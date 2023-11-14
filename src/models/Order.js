@@ -11,7 +11,7 @@ class Order {
     return this.#orderMenu;
   }
 
-  getMenuQuantity (){
+  getMenuQuantity () {
     return this.#quantity;
   }
 }
