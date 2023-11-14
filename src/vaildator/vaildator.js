@@ -31,7 +31,7 @@ class Vaildator {
   static isMenuInMenuList(name) {
     for (const category in MENU) {
       for (const menuItem in MENU[category]) {
-        if (!MENU[category][menuItem].name === name) {
+        if (MENU[category][menuItem].name !== name) {
           throw new Error(ERROR_MESSAGE.notVaildOrder);
         }
       } 
